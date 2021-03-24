@@ -17,7 +17,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <meta name="description" content="{{ pkg.description }}" />
+    <meta name="description" content="{{ settings.description }}" />
     {% block head %}
     <title>{{ settings.title }} | {{ title }}</title>
     <!-- load the critical styles inline -->
@@ -51,7 +51,7 @@
     <!-- header -->
     {% block header %}
     <!-- nav -->
-    {% include "partials/nav.njk" %} {% endblock %}
+    {% include "partials/nav-mobile.njk" %} {% endblock %}
     <!-- cover -->
     <header>{% block cover %} {% endblock %}</header>
     <!-- content -->

@@ -1,15 +1,15 @@
 {
-  "title": "First.Paint Pages",
+  "title": "You Me & The Gospel",
   "url": "https://proideas.dev/",
-  "description": "A minimalist UI Toolkit for building stylish, performance driven, accessibility first websites",
+  "description": "God is Love!",
   "feed": {
-    "subtitle": "A UI toolkit for creating and managing design/style systems, pattern libraries, style-guides, etc",
+    "subtitle": "A good news of the Gospel",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://proideas.dev/"
   },
   "author": {
-    "name": "Shawn Sandy",
+    "name": "YM&TG",
     "email": "shawnsandy@proideas.dev"
   },
   "styles": [],
