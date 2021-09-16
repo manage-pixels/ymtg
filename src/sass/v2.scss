@@ -1,0 +1,64 @@
+@use '@shawnsandy/first-paint/dist/v2/index.min.css';
+
+nav {
+}
+body {
+  background-color: var(--off-white) !important;
+  > nav {
+    --nav-height: 3.5rem;
+    filter: drop-shadow(8px 8px 16px rgba(0, 0, 0, 0.3));
+    background-image: url(/images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-inline: calc(130rem / 16);
+    width: 100% !important;
+    :any-link {
+      color: white;
+    }
+
+    h1 {
+      :any-link span {
+        color: yellow !important;
+      }
+      img[alt] {
+        object-fit: cover;
+      }
+    }
+    @media screen and (max-width: 980px) {
+      background-image: none;
+      background-color: #03053c;
+      padding-inline: 1rem;
+    }
+  }
+}
+
+footer[role="contentinfo"] {
+  --dsp: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-top: 0.5rem solid #030311;
+  background-image: url(/images/footer.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 100%;
+  min-height: 400px;
+
+  p {
+    --cl: var(--off-white);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #03053c;
+}
+
+main {
+  --h: 50vh;
+  min-height: var(--h);
+}
