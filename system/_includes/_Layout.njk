@@ -3,76 +3,69 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en">
-  <head>
+  <html lang="en"> <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <script
-      src="https://kit.fontawesome.com/e2ffdf4c70.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <meta name="description" content="{{ settings.description }}" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <script src="https://kit.fontawesome.com/e2ffdf4c70.js" crossorigin="anonymous"></script>
+    <meta name="description" content="{{ settings.description }}"/>
     {% block head %}
-    <title>{{ settings.title }} | {{ title }}</title>
-    <!-- load the critical styles inline -->
-    {% set css %} {% include "src/css/critical.css" %} {% endset %}
-    <!-- feed it through our cssmin filter to minify -->
-    <style>
-      {{ css | cssmin | safe }}
-    </style>
-    <!-- custom stylesheets -->
-    <link
-      rel="stylesheet"
-      href="/css/styles.css"
-      rel="stylesheet"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      href="/css/elements.css"
-      rel="stylesheet"
-      media="all"
-    />
-    {% for styles in settings.styles %}
-    <link href="{{ styles }}" rel="stylesheet" media="all" />
-    {% endfor %} {% if stylesheets %} {% for style in stylesheets %}
-    <link rel="stylesheet" href="{{ style }}" media="all" />
-    {% endfor %} {% endif %} {% endblock %}
+      <title>{{ settings.title }} | {{ title }}</title>
+      <!-- load the critical styles inline -->
+      {% set css %}
+      {% include "src/css/v2.css" %}
+      {% endset %}
+      <!-- feed it through our cssmin filter to minify -->
+      <style>
+        {{css | cssmin | safe}}</style>
+      <!-- custom stylesheets -->
+      {# <link rel="stylesheet" href="/css/styles.css" rel="stylesheet" media="all"/>
+            <link rel="stylesheet" href="/css/elements.css" rel="stylesheet" media="all"/> #}
+      {% for styles in settings.styles %}
+        <link href="{{ styles }}" rel="stylesheet" media="all"/>
+      {% endfor %}
+      {% if stylesheets %}
+        {% for style in stylesheets %}
+          <link rel="stylesheet" href="{{ style }}" media="all"/>
+        {% endfor %}
+      {% endif %}
+    {% endblock %}
   </head>
-
   <body class="{{ title | slug }}">
     <!-- header -->
     <!-- header -->
-    {% block header %}
-    <!-- nav -->
-    {% include "partials/nav-mobile.njk" %} {% endblock %}
+      {% block header %}
+      <!-- nav -->
+    {% include "partials/nav-mobile.njk" %}
+    {% endblock %}
     <!-- cover -->
-    <header>{% block cover %} {% endblock %}</header>
+      <header>{% block cover %}
+    {% endblock %}
+    </header>
     <!-- content -->
-    {% block content %}
+      {% block content %}
     {{ content | safe }}
     {% endblock %}
-
     <!-- footer -->
-    {% block footer %} {% include "partials/footer.njk" %} {% endblock %}
+      {% block footer %}
+    {% include "partials/footer.njk" %}
+    {% endblock %}
     <!-- scripts - replaced jquery with vue -->
     <!-- scripts - replaced jquery with vue -->
-    {% for js in metadata.scripts %}
-    <script src="{{ js }}"></script>
+      {% for js in metadata.scripts %}<script src="{{ js }}"> </script>
     {% endfor %}
     <!--  -->
-    {% if scripts %} {% for script in scripts %}
-    <script src="{{ script }}"></script>
-    {% endfor %} {% endif %}
+    {% if scripts %}
+      {% for script in scripts %}
+        <script src="{{ script }}"></script>
+      {% endfor %}
+    {% endif %}
     <!--  -->
-    {% if settings.scripts %} {% for src in settings.scripts %}
-    <script src="{{ src }}"></script>
-    {% endfor %} {% endif %}
+    {% if settings.scripts %}
+      {% for src in settings.scripts %}
+        <script src="{{ src }}"></script>
+      {% endfor %}
+    {% endif %}
   </body>
 </html>
