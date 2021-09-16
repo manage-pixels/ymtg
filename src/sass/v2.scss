@@ -5,6 +5,7 @@ nav {
 body {
   background-color: var(--off-white) !important;
   > nav {
+    --nav-height: 3.5rem;
     filter: drop-shadow(8px 8px 16px rgba(0, 0, 0, 0.3));
     background-image: url(/images/bg.jpg);
     background-repeat: no-repeat;
