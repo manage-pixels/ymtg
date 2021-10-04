@@ -59,6 +59,6 @@ h6 {
 }
 
 main {
-  --h: 50vh;
-  min-height: var(--h);
+  --min-h: 50vh;
+  min-height: var(--min-h);
 }
