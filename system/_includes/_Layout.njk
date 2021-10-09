@@ -21,7 +21,7 @@
         {{css | cssmin | safe}}</style>
       <!-- custom stylesheets -->
       {# <link rel="stylesheet" href="/css/styles.css" rel="stylesheet" media="all"/>
-            <link rel="stylesheet" href="/css/elements.css" rel="stylesheet" media="all"/> #}
+                        <link rel="stylesheet" href="/css/elements.css" rel="stylesheet" media="all"/> #}
       {% for styles in settings.styles %}
         <link href="{{ styles }}" rel="stylesheet" media="all"/>
       {% endfor %}
@@ -40,32 +40,31 @@
     {% include "partials/nav-mobile.njk" %}
     {% endblock %}
     <!-- cover -->
-      <header>{% block cover %}
-    {% endblock %}
-    </header>
-    <!-- content -->
+      <header style="--bg: #02034d">{% block cover %}{% endblock %} </header>
+      <!-- content -->
       {% block content %}
-    {{ content | safe }}
-    {% endblock %}
-    <!-- footer -->
+        {{ content | safe }}
+      {% endblock %}
+      <!-- footer -->
       {% block footer %}
-    {% include "partials/footer.njk" %}
-    {% endblock %}
-    <!-- scripts - replaced jquery with vue -->
-    <!-- scripts - replaced jquery with vue -->
-      {% for js in metadata.scripts %}<script src="{{ js }}"> </script>
-    {% endfor %}
-    <!--  -->
-    {% if scripts %}
-      {% for script in scripts %}
-        <script src="{{ script }}"></script>
+        {% include "partials/footer.njk" %}
+      {% endblock %}
+      <!-- scripts - replaced jquery with vue -->
+      <!-- scripts - replaced jquery with vue -->
+      {% for js in metadata.scripts %}
+        <script src="{{ js }}"></script>
       {% endfor %}
-    {% endif %}
-    <!--  -->
-    {% if settings.scripts %}
-      {% for src in settings.scripts %}
-        <script src="{{ src }}"></script>
-      {% endfor %}
-    {% endif %}
-  </body>
-</html>
+      <!--  -->
+      {% if scripts %}
+        {% for script in scripts %}
+          <script src="{{ script }}"></script>
+        {% endfor %}
+      {% endif %}
+      <!--  -->
+      {% if settings.scripts %}
+        {% for src in settings.scripts %}
+          <script src="{{ src }}"></script>
+        {% endfor %}
+      {% endif %}
+    </body>
+  </html>

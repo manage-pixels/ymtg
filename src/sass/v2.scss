@@ -36,6 +36,16 @@ body {
   }
 }
 
+[role="banner"] {
+  --bg: #02034d;
+  h1,
+  h3,
+  h2 {
+    --cl: white;
+    --align: center;
+  }
+}
+
 footer[role="contentinfo"] {
   --dsp: flex;
   align-items: flex-end;
@@ -59,7 +69,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #03053c;
+  --cl: #03053c;
   word-break: keep-all;
 }
 
