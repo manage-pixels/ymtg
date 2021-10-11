@@ -1,0 +1,7 @@
+{
+  "layout": "posts.njk",
+  "tags": "features",
+  "category": "contents",
+  "showDate": true,
+  "scripts": []
+}
